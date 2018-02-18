@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.1",
     "@types/react-redux": "^5.0.14",
+    "@types/react-router-dom": "^4.2.4",
     "@types/redux-thunk": "^2.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

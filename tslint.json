@@ -23,8 +23,7 @@
         "label-position": true,
         "max-line-length": [ true, 200 ],
         "member-ordering": [
-            true,
-            "public-before-private",
+            false,
             "static-before-instance",
             "variables-before-functions"
         ],

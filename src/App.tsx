@@ -5,7 +5,10 @@ import { createStore } from 'redux';
 import { reducer } from './reducers/index';
 import { StoreState } from './types/index';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import StartPage from './containers/StartPage';
+import StatelessComponent from './components/StatelessComponent/StatelessComponent';
+import RoutePage from './containers/RoutePage';
 
 const store = createStore<StoreState>(reducer, {
   phrase: "...or at least let's try",
@@ -13,13 +16,30 @@ const store = createStore<StoreState>(reducer, {
 });
 
 class App extends React.Component {
+
   render() {
     return (
       <Provider store={store}>
-        <StartPage />
+        <div>
+          <header>Header</header>
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact={true} component={StartPage} />
+              <Route path="/newPage/:value" component={RoutePage} />
+              <Route component={this.notFoundPage} />
+            </Switch>
+          </BrowserRouter>
+        </div>
       </Provider>
     );
   }
+
+  private notFoundPage = () => {
+    return (
+      <StatelessComponent name="Page not found!"/>
+    );
+  }
+
 }
 
 export default App;

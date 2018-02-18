@@ -1,7 +1,7 @@
-import StartPage from '../components/StartPage/StartPage';
 import * as actions from "../actions";
 import { StoreState } from '../types';
 import { connect, Dispatch } from 'react-redux';
+import RoutePage from '../components/RoutePage/RoutePage';
 
 export function mapStateToProps({phrase, font}: StoreState) {
   return {
@@ -17,4 +17,4 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.ContainerAction>) 
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StartPage as any);
+export default connect(mapStateToProps, mapDispatchToProps)(RoutePage as any);

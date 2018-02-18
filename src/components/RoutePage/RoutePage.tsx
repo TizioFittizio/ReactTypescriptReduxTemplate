@@ -1,8 +1,10 @@
 import * as React from "react";
-import './StateComponent.css';
+import './RoutePage.css';
+import { RouteComponentProps } from "react-router";
 
-interface Props {
+interface Props extends RouteComponentProps<StateComponent> {
     value: string;
+    match: any;
 }
 
 interface State {
@@ -10,12 +12,12 @@ interface State {
 }
 
 export default class StateComponent extends React.Component<Props, State> {
-
+    
     constructor(props: Props){
         super(props);
         console.log(this.props, this.state);
         this.state = {
-            value: props.value
+            value: props.match.params.value
         };
     }
     
@@ -25,8 +27,10 @@ export default class StateComponent extends React.Component<Props, State> {
 
     render() {
         return (
-            <div>
+            <div className="page">
                 <input type="text" onChange={e => this.onTextChange(e)} value={this.state.value}/>
+                <span> 🡠 The initial value was received as an argument from router!</span>
+                <p>Field updated in state 🡢 {this.state.value}</p>
             </div>
         );
     }
