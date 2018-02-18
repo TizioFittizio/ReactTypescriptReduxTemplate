@@ -1,15 +1,22 @@
 import * as React from 'react';
 import './App.css';
 
-// const logo = require('./logo.svg');
+import { createStore } from 'redux';
+import { reducer } from './reducers/index';
+import { StoreState } from './types/index';
+import { Provider } from 'react-redux';
+import StartPage from './containers/StartPage';
+
+const store = createStore<StoreState>(reducer, {
+  phrase: "...or at least let's try"
+});
 
 class App extends React.Component {
   render() {
     return (
-      /*<Provider store={StoreState}>
-        <Container />
-      </Provider>*/
-      <p>DIOCANE</p>
+      <Provider store={store}>
+        <StartPage />
+      </Provider>
     );
   }
 }

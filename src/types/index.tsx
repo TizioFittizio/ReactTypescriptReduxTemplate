@@ -1,4 +1,3 @@
 export interface StoreState {
-    languageName: string;
-    enthusiasmLevel: number;
+    phrase: string;
 }

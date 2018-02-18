@@ -6,7 +6,6 @@ export interface ShuffleAction {
 }
 
 export function shuffle(): ShuffleAction {
-    console.log("!");
     return {
         type: constants.SHUFFLE,
         payload: "!"
