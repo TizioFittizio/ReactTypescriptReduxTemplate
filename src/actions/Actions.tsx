@@ -20,7 +20,7 @@ export interface ChangeFontAction {
 export function changeFont(): ChangeFontAction {
     return {
         type: constants.CHANGE_FONT,
-        payload: "!!!"
+        payload: constants.FONTS[~~(Math.random() * constants.FONTS.length)]
     };
 }
 

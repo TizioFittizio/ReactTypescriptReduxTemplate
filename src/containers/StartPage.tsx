@@ -3,15 +3,17 @@ import * as actions from "../actions";
 import { StoreState } from '../types';
 import { connect, Dispatch } from 'react-redux';
 
-export function mapStateToProps({phrase}: StoreState) {
+export function mapStateToProps({phrase, font}: StoreState) {
   return {
-    phrase
+    phrase,
+    font
   };
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.ContainerAction>) {
   return {
     shuffle: () => dispatch(actions.shuffle()),
+    changeFont: () => dispatch(actions.changeFont())
   };
 }
 

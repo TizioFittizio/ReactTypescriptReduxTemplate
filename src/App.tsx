@@ -8,7 +8,8 @@ import { Provider } from 'react-redux';
 import StartPage from './containers/StartPage';
 
 const store = createStore<StoreState>(reducer, {
-  phrase: "...or at least let's try"
+  phrase: "...or at least let's try",
+  font: "Palatino Linotype"
 });
 
 class App extends React.Component {

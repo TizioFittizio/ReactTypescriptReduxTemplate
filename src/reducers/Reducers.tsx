@@ -1,15 +1,12 @@
 import { ContainerAction } from '../actions';
-import { StoreState } from '../types/index';
-import { SHUFFLE } from '../constants/index';
+import { StoreState } from '../types';
+import { SHUFFLE, CHANGE_FONT } from '../constants';
 
 export function reducer(state: StoreState, action: ContainerAction): StoreState {
   switch (action.type) {
-    /*case INCREMENT_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
-    case DECREMENT_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1) };*/
+    case CHANGE_FONT:
+        return {...state, font: action.payload};
     case SHUFFLE:
-        console.log("!");
         return {...state, phrase: action.payload};
     default:
         return state;
