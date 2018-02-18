@@ -9,29 +9,38 @@ interface Props {
   changeFont: () => void;
 }
 
-export default function StartPage({ phrase, font, shuffle, changeFont }: Props) {
+export default class StartPage extends React.Component<Props, null>{
 
+  constructor(props: Props){
+    super(props);
+  }
 
-  const stylesheet = {
-    page: {
-      fontFamily: font
-    },
-    title: {
-      fontSize: 40
-    }
-  };
+  
 
-  return (
-    <div style={stylesheet.page} className="page">
-      <h1 style={stylesheet.title}>React Typescript Template</h1>
-      <hr />
-      <p>{phrase}</p>
-      <div className="buttons">
-        <button onClick={changeFont}>Change font</button>
-        <button onClick={shuffle}>Change Phrase</button>
-        <Link to='/newPage/newPage'>Change Page</Link>
+  render(){
+
+    const style = {
+      page: {
+        fontFamily: this.props.font
+      },
+      title: {
+        fontSize: 40
+      }
+    };
+
+    return (
+      <div style={style.page} className="page">
+          <h1 style={style.title}>React Typescript Template</h1>
+          <hr/>
+          <p>{this.props.phrase}</p>
+          <div className="buttons">
+            <button onClick={this.props.changeFont}>Change font</button>
+            <button onClick={this.props.shuffle}>Change Phrase</button>
+            <Link to='/newPage/newPage'>Change Page</Link>
+          </div>
       </div>
-    </div>
-  );
-
+    );
+    
+  }
+  
 }

@@ -4,6 +4,7 @@
 - Template project with react wired with redux
 - Typescript with tslint configured
 - Template test for components implemented with enzyme
+- React Router v4
 
 ## How to get it work
 

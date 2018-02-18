@@ -8,7 +8,7 @@ export interface ShuffleAction {
 export function shuffle(): ShuffleAction {
     return {
         type: constants.SHUFFLE,
-        payload: "!"
+        payload: Math.random() * 100 + ""
     };
 }
 
