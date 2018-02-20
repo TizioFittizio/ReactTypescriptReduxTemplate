@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import StartPage from './containers/StartPage';
 import StatelessComponent from './components/StatelessComponent/StatelessComponent';
 import RoutePage from './containers/RoutePage';
+import HeadComponent from './components/HeadComponent/HeadComponent';
 
 const store = createStore<StoreState>(reducer, {
   phrase: "...or at least let's try",
@@ -20,8 +21,8 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <header>Header</header>
+        <div className="container-fluid">
+          <HeadComponent />
           <BrowserRouter>
             <Switch>
               <Route path="/" exact={true} component={StartPage} />

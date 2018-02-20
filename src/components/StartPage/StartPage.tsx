@@ -20,23 +20,41 @@ export default class StartPage extends React.Component<Props, null>{
   render(){
 
     const style = {
-      page: {
+      phrase: {
         fontFamily: this.props.font
       },
-      title: {
-        fontSize: 40
-      }
     };
 
     return (
-      <div style={style.page} className="page">
-          <h1 style={style.title}>React Typescript Template</h1>
-          <hr/>
-          <p>{this.props.phrase}</p>
-          <div className="buttons">
-            <button onClick={this.props.changeFont}>Change font</button>
-            <button onClick={this.props.shuffle}>Change Phrase</button>
-            <Link to='/newPage/newPage'>Change Page</Link>
+      <div>
+          <p style={style.phrase}>{this.props.phrase}</p>
+          <div className="row">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-2">
+              <button 
+                type="button" 
+                className="btn btn-outline-primary btn-block" 
+                onClick={this.props.changeFont}
+              >
+                Change font
+              </button>
+            </div>
+            <div className="col-12 col-sm-4 col-md-3 col-lg-2">
+              <button 
+                type="button" 
+                className="btn btn-outline-primary btn-block" 
+                onClick={this.props.shuffle}
+              >
+                Change Phrase
+              </button>
+            </div>
+            <div className="col-12 col-sm-4 col-md-3 col-lg-2">
+              <Link 
+                to='/newPage/strawberry'
+                className="btn btn-outline-primary btn-block" 
+              >
+                Change Page
+              </Link>
+            </div>
           </div>
       </div>
     );

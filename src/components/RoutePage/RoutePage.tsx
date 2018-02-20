@@ -15,7 +15,6 @@ export default class StateComponent extends React.Component<Props, State> {
     
     constructor(props: Props){
         super(props);
-        console.log(this.props, this.state);
         this.state = {
             value: props.match.params.value
         };
@@ -27,10 +26,18 @@ export default class StateComponent extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className="page">
-                <input type="text" onChange={e => this.onTextChange(e)} value={this.state.value}/>
-                <span> 🡠 The initial value was received as an argument from router!</span>
-                <p>Field updated in state 🡢 {this.state.value}</p>
+            <div>
+                <div className="row">
+                    <div className="col form-group">
+                        <input type="text" className="formControl" onChange={e => this.onTextChange(e)} value={this.state.value}/>
+                        <span> 🡠 The initial value was received as an argument from router! Check the URL!</span>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <span>Field updated in state 🡢 {this.state.value}</span>
+                    </div>
+                </div>
             </div>
         );
     }

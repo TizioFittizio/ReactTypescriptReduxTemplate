@@ -5,6 +5,7 @@
 - Typescript with tslint configured
 - Template test for components implemented with enzyme
 - React Router v4
+- Bootstrap 4 included
 
 ## How to get it work
 

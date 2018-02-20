@@ -5,7 +5,7 @@ interface Props {
     name: string;
 }
 
-export default function Hello({name}: Props){
+export default function StatelessComponent({name}: Props){
 
     return (
         <div>
