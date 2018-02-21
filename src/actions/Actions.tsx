@@ -1,4 +1,5 @@
 import * as constants from "../constants";
+import axios from "axios";
 
 export interface ShuffleAction {
     type: constants.SHUFFLE;
@@ -24,4 +25,21 @@ export function changeFont(): ChangeFontAction {
     };
 }
 
-export type ContainerAction = ShuffleAction | ChangeFontAction;
+export interface FetchDataAction {
+    type: constants.FETCH_DATA;
+    payload: any;
+}
+
+
+export function fetchData(): any {
+    return async (dispatch: any) => {
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
+        console.log(response);
+        dispatch({
+            type: constants.FETCH_DATA,
+            payload: response
+        });
+    };
+}
+
+export type ContainerAction = ShuffleAction | ChangeFontAction | any;

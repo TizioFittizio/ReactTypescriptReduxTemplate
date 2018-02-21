@@ -13,7 +13,8 @@ export function mapStateToProps({phrase, font}: StoreState) {
 export function mapDispatchToProps(dispatch: Dispatch<actions.ContainerAction>) {
   return {
     shuffle: () => dispatch(actions.shuffle()),
-    changeFont: () => dispatch(actions.changeFont())
+    changeFont: () => dispatch(actions.changeFont()),
+    fetchData: () => dispatch(actions.fetchData())
   };
 }
 

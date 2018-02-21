@@ -7,6 +7,7 @@ interface Props {
   font: string;
   shuffle: () => void;
   changeFont: () => void;
+  fetchData: () => void;
 }
 
 export default class StartPage extends React.Component<Props, null>{
@@ -33,6 +34,15 @@ export default class StartPage extends React.Component<Props, null>{
               <button 
                 type="button" 
                 className="btn btn-outline-primary btn-block" 
+                onClick={this.props.shuffle}
+              >
+                Change Phrase
+              </button>
+            </div>
+            <div className="col-12 col-sm-4 col-md-3 col-lg-2">
+              <button 
+                type="button" 
+                className="btn btn-outline-primary btn-block" 
                 onClick={this.props.changeFont}
               >
                 Change font
@@ -42,9 +52,9 @@ export default class StartPage extends React.Component<Props, null>{
               <button 
                 type="button" 
                 className="btn btn-outline-primary btn-block" 
-                onClick={this.props.shuffle}
+                onClick={this.props.fetchData}
               >
-                Change Phrase
+                Async call
               </button>
             </div>
             <div className="col-12 col-sm-4 col-md-3 col-lg-2">

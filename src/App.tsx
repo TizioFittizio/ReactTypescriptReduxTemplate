@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './App.css';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware  } from 'redux';
 import { reducer } from './reducers/index';
 import { StoreState } from './types/index';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import thunk from 'redux-thunk';
 import StartPage from './containers/StartPage';
 import StatelessComponent from './components/StatelessComponent/StatelessComponent';
 import RoutePage from './containers/RoutePage';
@@ -14,7 +15,7 @@ import HeadComponent from './components/HeadComponent/HeadComponent';
 const store = createStore<StoreState>(reducer, {
   phrase: "...or at least let's try",
   font: "Palatino Linotype"
-});
+}, applyMiddleware(thunk));
 
 class App extends React.Component {
 
